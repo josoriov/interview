@@ -57,10 +57,3 @@ def isMatch(s: str, p: str) -> bool:
                     cache[i][j] = cache[i][j] or cache[i - 1][j]
 
     return cache[m][n]
-
-
-if __name__ == "__main__":
-    assert isMatch("aab", "c*a*b") is True
-    assert isMatch("aa", "a") is False
-    assert isMatch("aa", "a*") is True
-    assert isMatch("ab", ".*") is True
