@@ -4,6 +4,8 @@ This is a self-contained, end-to-end study pack for AI Systems Design interviews
 
 The goal is not to memorize architectures. It is to turn an ambiguous request into measurable requirements, select the simplest design that satisfies them, quantify scale, reason about data and model behavior, and defend trade-offs.
 
+The examples use a ByteByteGo-style interview flow: clarify requirements, estimate capacity, draw a simple high-level design, define the data model/interfaces, then discuss scalability, performance, reliability, and resiliency. Start simple, get buy-in, and add detail only when a requirement or bottleneck justifies it.
+
 ## Recommended order
 
 1. [Study plan and interview strategy](00_study_plan_and_strategy.md)
@@ -28,7 +30,7 @@ For every case, make three passes:
 2. **Reconstruct:** close the notes and draw the solution in 35 minutes.
 3. **Defend:** spend 10 minutes answering “why not the alternative?”, “how does it fail?”, and “how do you measure it?” aloud.
 
-A practice interview should spend roughly 5 minutes on clarification, 5 on metrics and scale, 15 on the high-level architecture, 15 on deep dives, and 10 on failures, safety, cost, and evolution.
+A practice interview should spend roughly 5-8 minutes clarifying scope, 10-15 minutes proposing a high-level design with quick estimates, 15-20 minutes on two or three deep dives, and 3-5 minutes wrapping up trade-offs, failure modes, and next steps.
 
 ## Definition of readiness
 
@@ -51,4 +53,4 @@ The central chain is:
 
 ## Diagram rendering
 
-Architecture diagrams use Mermaid rather than spacing-sensitive ASCII art. GitHub and Mermaid-enabled Markdown previews render them as proper flowcharts. If an editor displays the Mermaid source instead, enable its Mermaid Markdown-preview support; the diagram definitions remain readable and version-controlled in the `.md` files.
+Architecture diagrams are checked in as SVG files under `images/` so GitHub renders them directly in Markdown without Mermaid support. Keep diagrams intentionally high level in the first pass; add caches, queues, shards, or extra model stages only when the surrounding example explicitly motivates them.

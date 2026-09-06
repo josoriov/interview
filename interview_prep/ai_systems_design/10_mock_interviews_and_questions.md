@@ -2,7 +2,7 @@
 
 ## How to run a mock
 
-Use a blank page and a 45-minute timer. Do not read the solution files. Record yourself. At minute 35, inject one changed requirement. At the end, score the ten categories in the study plan and write three specific improvements.
+Use a blank page and a 45-minute timer. Do not read the solution files. Record yourself. Follow the same order every time: requirements clarification, capacity estimation, high-level design, data design, interface design, scalability/performance, and reliability/resiliency. At minute 35, inject one changed requirement. At the end, score the answer and write three specific improvements.
 
 ### Mock A: Search for a marketplace
 
@@ -14,31 +14,31 @@ Interviewer injects:
 - minute 30: launch in five countries with different restricted-item policies;
 - minute 35: traffic will spike 20× during a campaign.
 
-Expected coverage: lexical+dense retrieval, multimodal embeddings, eligibility/index freshness, multi-stage ranking, sponsored-auction separation, exposure logs, query/item cold start, latency budget, cache, overload control, relevance vs. conversion, and policy by market.
+Expected coverage: clarify organic vs. sponsored scope, estimate query/index scale, draw a simple search API → retrieval → ranking → policy → results flow, define listing/query/exposure data, specify search and index-update interfaces, then discuss freshness, latency, market policy, and fallback.
 
 ### Mock B: Account-takeover detection
 
 Detect suspicious logins and decide allow, challenge, or block at 50k peak TPS and p99 <60 ms. Labels are delayed and attackers adapt.
 
-Expected coverage: cost-sensitive thresholds, streaming velocity/device graph features, point-in-time correctness, delayed/biased labels, active-active/fallback rules, calibration, adversarial drift, privacy, and appeal.
+Expected coverage: clarify decision policy and harm, estimate TPS/latency, draw login → risk API → features → score → challenge/block flow, define labels and point-in-time features, specify score/reason interfaces, then discuss strict deadlines, delayed labels, adversaries, privacy, and fallback.
 
 ### Mock C: Medical-document assistant
 
 Design an assistant that summarizes a patient's record for clinicians and cites evidence. It must never expose another patient's data and is not allowed to make an autonomous diagnosis.
 
-Expected coverage: identity/patient/role authorization, structured and unstructured retrieval, temporal/conflicting evidence, abstention, citations, clinician-in-the-loop, audit, severe-error evaluation, red teaming, residence/retention, and explicit scope.
+Expected coverage: clarify advisory scope and privacy constraints, estimate users/documents/tokens, draw identity → retrieval → LLM → validation → cited summary flow, define patient/document/audit data, specify answer/citation interfaces, then discuss authorization, abstention, evaluation, retention, and fallback.
 
 ### Mock D: Real-time content moderation
 
 Moderate text, images, and video at global social-network scale. Some categories must be blocked before publication; others can be reviewed later.
 
-Expected coverage: policy taxonomy and regional versioning, cascade of hashes/rules/small/large models, video sampling, uncertainty and human review, adversarial evolution, appeals, fairness, latency vs. recall, active learning, and reviewer safety.
+Expected coverage: clarify moderation actions and policy scope, estimate post/video volume and latency, draw upload → policy checks → model/rules → decision/review flow, define content/review/appeal data, specify decision interfaces, then discuss latency vs. recall, human review, adversaries, fairness, and appeals.
 
 ### Mock E: Coding agent for internal repositories
 
 Design an agent that answers questions, proposes patches, runs tests, and optionally opens a pull request. It must not leak secrets or modify production.
 
-Expected coverage: repository indexing, branch/worktree isolation, least-privilege tools, sandbox/network egress, prompt injection in code/docs, secret scanning, bounded loop, test feedback, approval before external side effects, audit, eval tasks, and rollback.
+Expected coverage: clarify allowed actions and approval boundaries, estimate repos/jobs/tool calls, draw user → orchestrator → repo context → planner → tools → response flow, define repo/index/audit data, specify tool interfaces, then discuss sandboxing, secrets, prompt injection, test feedback, rollback, and human approval.
 
 ## Rapid questions with model answers
 

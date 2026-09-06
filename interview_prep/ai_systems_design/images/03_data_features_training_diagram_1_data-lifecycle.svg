@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2298" height="238" viewBox="0 0 2298 238" role="img" aria-labelledby="title desc">
-<title>03_data_features_training diagram 1: Data lifecycle</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="706" height="354" viewBox="0 0 706 354" role="img" aria-labelledby="title desc">
+<title>Data lifecycle</title>
 <desc>Generated SVG rendering of a Mermaid flowchart.</desc>
 <defs>
 <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
@@ -7,37 +7,23 @@
 <style>
 .canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
 </style>
-<rect class="canvas" x="0" y="0" width="2298" height="238"/>
-<path class="edge" d="M 184.0 61.0 L 266.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 416.0 61.0 L 498.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 676.0 61.0 L 758.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 908.0 61.0 L 990.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 1168.0 61.0 L 1250.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 1404.0 61.0 L 1486.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 1672.0 61.0 L 1754.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 1579.0 88.0 C 1704.0 88.0, 1704.0 150.0, 1829.0 150.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 1904.0 177.0 C 2031.5 177.0, 2031.5 88.0, 2159.0 88.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 2054.0 61.0 L 416.0 61.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
-<rect class="label-bg" x="1194.0" y="47.0" width="82.0" height="20" rx="4"/>
-<text class="edge-label" x="1235.0" y="61.0" text-anchor="middle">new events</text>
-<rect class="node" x="34.0" y="34.0" width="150" height="54" rx="8"/>
-<text class="node-text" x="109.0" y="66.0" text-anchor="middle"><tspan x="109.0" dy="0">Sources</tspan></text>
-<rect class="node" x="266.0" y="34.0" width="150" height="54" rx="8"/>
-<text class="node-text" x="341.0" y="66.0" text-anchor="middle"><tspan x="341.0" dy="0">Ingestion</tspan></text>
-<rect class="node" x="498.0" y="34.0" width="178" height="54" rx="8"/>
-<text class="node-text" x="587.0" y="66.0" text-anchor="middle"><tspan x="587.0" dy="0">Immutable raw data</tspan></text>
-<rect class="node" x="758.0" y="34.0" width="150" height="54" rx="8"/>
-<text class="node-text" x="833.0" y="66.0" text-anchor="middle"><tspan x="833.0" dy="0">Validation</tspan></text>
-<rect class="node" x="990.0" y="34.0" width="178" height="54" rx="8"/>
-<text class="node-text" x="1079.0" y="66.0" text-anchor="middle"><tspan x="1079.0" dy="0">Versioned datasets</tspan></text>
-<rect class="node" x="1250.0" y="34.0" width="154" height="54" rx="8"/>
-<text class="node-text" x="1327.0" y="66.0" text-anchor="middle"><tspan x="1327.0" dy="0">Transformations</tspan></text>
-<rect class="node" x="1486.0" y="34.0" width="186" height="54" rx="8"/>
-<text class="node-text" x="1579.0" y="66.0" text-anchor="middle"><tspan x="1579.0" dy="0">Features and labels</tspan></text>
-<rect class="node" x="1754.0" y="34.0" width="218" height="54" rx="8"/>
-<text class="node-text" x="1863.0" y="66.0" text-anchor="middle"><tspan x="1863.0" dy="0">Training and evaluation</tspan></text>
-<rect class="node" x="1754.0" y="150.0" width="150" height="54" rx="8"/>
-<text class="node-text" x="1829.0" y="182.0" text-anchor="middle"><tspan x="1829.0" dy="0">Serving</tspan></text>
-<rect class="node" x="2054.0" y="34.0" width="210" height="54" rx="8"/>
-<text class="node-text" x="2159.0" y="66.0" text-anchor="middle"><tspan x="2159.0" dy="0">Exposures and feedback</tspan></text>
+<rect class="canvas" x="0" y="0" width="706" height="354"/>
+<path class="edge" d="M 188.0 61.0 L 270.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 420.0 61.0 L 502.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 184.0 177.0 L 270.0 177.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 266.0 L 111.0 88.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect class="label-bg" x="79.5" y="163.0" width="61.0" height="20" rx="4"/>
+<text class="edge-label" x="110.0" y="177.0" text-anchor="middle">improve</text>
+<rect class="node" x="34.0" y="34.0" width="154" height="54" rx="8"/>
+<text class="node-text" x="111.0" y="66.0" text-anchor="middle"><tspan x="111.0" dy="0">Source of truth</tspan></text>
+<rect class="node" x="270.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="345.0" y="66.0" text-anchor="middle"><tspan x="345.0" dy="0">Validate</tspan></text>
+<rect class="node" x="502.0" y="34.0" width="170" height="54" rx="8"/>
+<text class="node-text" x="587.0" y="66.0" text-anchor="middle"><tspan x="587.0" dy="0">Versioned dataset</tspan></text>
+<rect class="node" x="34.0" y="150.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="182.0" text-anchor="middle"><tspan x="109.0" dy="0">features</tspan></text>
+<rect class="node" x="270.0" y="150.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="345.0" y="182.0" text-anchor="middle"><tspan x="345.0" dy="0">Train or score</tspan></text>
+<rect class="node" x="34.0" y="266.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="298.0" text-anchor="middle"><tspan x="109.0" dy="0">logs</tspan></text>
 </svg>

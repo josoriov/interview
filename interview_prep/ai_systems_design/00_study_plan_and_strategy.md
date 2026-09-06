@@ -27,50 +27,45 @@ Interviewers look for evidence that you can:
 | Risk       | How does it fail safely?        | Adding safety at the end     |
 | Operations | Who detects and fixes it?       | “Monitoring” without action  |
 
-## A 45-minute script
+## A ByteByteGo-style 45-minute script
 
-### Minutes 0–5: clarify
+Use the same loop for every case. The first diagram is the interview flow; the second is the default AI system shape to start from after requirements are clear.
 
-Ask only questions that change the design:
+![ByteByteGo-style interview flow](images/00_study_plan_and_strategy_diagram_1_minutes-10-20-high-level-architecture.svg)
 
-- Who consumes the output, and what action follows?
-- Is this prediction, ranking, generation, detection, or automation?
-- Is it advisory or autonomous?
-- What are the costs of false positives and false negatives?
-- What p50/p95/p99 latency, availability, and freshness are required?
-- What is current and expected scale? Global or regional?
-- What data exists, and what privacy/legal constraints apply?
-- Can we collect explicit or implicit feedback?
+![Simple AI system blueprint](images/00_study_plan_and_strategy_diagram_2_minutes-10-20-high-level-architecture.svg)
 
-State assumptions explicitly: “I will assume X. If that changes, I would change Y.”
+### Step 1: understand the problem and establish scope
 
-### Minutes 5–10: contract and scale
+Spend 5-8 minutes asking questions that change the design:
 
-Define exact input/output, business metric, offline proxy, online metric, guardrails, SLO, and order-of-magnitude capacity.
+- Who uses the output, and what decision or action follows?
+- Is this prediction, ranking, generation, detection, summarization, or automation?
+- Is the system advisory, semi-automated, or autonomous?
+- What are the costs of false positives, false negatives, bad answers, or unsafe actions?
+- What p95/p99 latency, availability, freshness, privacy, and budget constraints matter?
+- What current scale and one-year growth should the design support?
+- What data exists at decision time, and what feedback can be logged?
 
-### Minutes 10–20: high-level architecture
+End this step with a tight contract: input, output, success metric, guardrails, scale, and out-of-scope items.
 
-![Minutes 10–20: high-level architecture](images/00_study_plan_and_strategy_diagram_1_minutes-10-20-high-level-architecture.svg)
+### Step 2: propose a high-level design and get buy-in
 
-For GenAI:
+Spend 10-15 minutes drawing the simplest end-to-end flow. Include the user/client, API or orchestrator, data/retrieval path, model or rules, policy layer, response, logs, and a basic training or evaluation loop. Do back-of-the-envelope math only to decide whether the simple blueprint fits.
 
-![Minutes 10–20: high-level architecture](images/00_study_plan_and_strategy_diagram_2_minutes-10-20-high-level-architecture.svg)
+Keep the diagram boring on purpose. Table optimizations such as streaming, sharding, multi-region active-active, graph models, or fine-tuning until the interviewer agrees they are needed.
 
-### Minutes 20–35: deep dives
+### Step 3: design deep dive
 
-Choose two or three high-risk areas: label leakage, retrieval/ranking, feature parity, tail latency, LLM evaluation, authorization, or multi-tenancy. Depth beats a shallow catalog.
+Spend 15-20 minutes on two or three components selected from the actual requirements. Common AI deep dives are label quality, point-in-time features, retrieval quality, latency budget, cost controls, permission checks, evaluation, and rollout.
 
-### Minutes 35–42: failures and operations
+### Step 4: wrap up
 
-For each hop ask: What if it is slow, down, stale, or wrong? Is retry safe? What fallback preserves value? What triggers rollback? Can an operator trace the request to exact model, data, and configuration versions?
+Spend 3-5 minutes summarizing trade-offs, bottlenecks, failure handling, and the next scale step. Close with a phased path:
 
-### Minutes 42–45: summarize and evolve
-
-Restate the architecture, central trade-offs, risks, and phased path:
-
-- V0: rules, manual process, or simple baseline;
-- V1: simple model with instrumentation;
-- V2: personalization, streaming, or stronger model only when evidence supports it.
+- V0: rules, manual process, BM25, popularity, or another simple baseline.
+- V1: simple model or RAG path with logging, evaluation, canary, and rollback.
+- V2: streaming, ANN tuning, personalization, fine-tuning, agents, or multi-region only after a measurable trigger.
 
 ## Fourteen-day plan
 

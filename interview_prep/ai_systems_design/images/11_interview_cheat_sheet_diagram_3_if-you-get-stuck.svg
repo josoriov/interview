@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1658" height="122" viewBox="0 0 1658 122" role="img" aria-labelledby="title desc">
-<title>11_interview_cheat_sheet diagram 3: If you get stuck</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="682" height="470" viewBox="0 0 682 470" role="img" aria-labelledby="title desc">
+<title>If you get stuck</title>
 <desc>Generated SVG rendering of a Mermaid flowchart.</desc>
 <defs>
 <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
@@ -7,25 +7,22 @@
 <style>
 .canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
 </style>
-<rect class="canvas" x="0" y="0" width="1658" height="122"/>
-<path class="edge" d="M 188.0 61.0 L 270.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 420.0 61.0 L 502.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 656.0 61.0 L 738.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 916.0 61.0 L 998.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 1148.0 61.0 L 1230.0 61.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 1380.0 61.0 L 1462.0 61.0" marker-end="url(#arrow)"/>
-<rect class="node" x="34.0" y="34.0" width="154" height="54" rx="8"/>
-<text class="node-text" x="111.0" y="66.0" text-anchor="middle"><tspan x="111.0" dy="0">User and action</tspan></text>
-<rect class="node" x="270.0" y="34.0" width="150" height="54" rx="8"/>
-<text class="node-text" x="345.0" y="66.0" text-anchor="middle"><tspan x="345.0" dy="0">Success metric</tspan></text>
-<rect class="node" x="502.0" y="34.0" width="154" height="54" rx="8"/>
-<text class="node-text" x="579.0" y="66.0" text-anchor="middle"><tspan x="579.0" dy="0">Labels and data</tspan></text>
-<rect class="node" x="738.0" y="34.0" width="178" height="54" rx="8"/>
-<text class="node-text" x="827.0" y="66.0" text-anchor="middle"><tspan x="827.0" dy="0">Baseline and model</tspan></text>
-<rect class="node" x="998.0" y="34.0" width="150" height="54" rx="8"/>
-<text class="node-text" x="1073.0" y="66.0" text-anchor="middle"><tspan x="1073.0" dy="0">Serving path</tspan></text>
-<rect class="node" x="1230.0" y="34.0" width="150" height="54" rx="8"/>
-<text class="node-text" x="1305.0" y="66.0" text-anchor="middle"><tspan x="1305.0" dy="0">Feedback loop</tspan></text>
-<rect class="node" x="1462.0" y="34.0" width="162" height="54" rx="8"/>
-<text class="node-text" x="1543.0" y="66.0" text-anchor="middle"><tspan x="1543.0" dy="0">Failure handling</tspan></text>
+<rect class="canvas" x="0" y="0" width="682" height="470"/>
+<path class="edge" d="M 184.0 61.0 L 266.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 382.0 C 225.0 382.0, 225.0 204.0, 341.0 204.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 341.0 150.0 C 457.0 150.0, 457.0 88.0, 573.0 88.0" marker-end="url(#arrow)"/>
+<rect class="node" x="34.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="66.0" text-anchor="middle"><tspan x="109.0" dy="0">Clarify scope</tspan></text>
+<rect class="node" x="266.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="341.0" y="66.0" text-anchor="middle"><tspan x="341.0" dy="0">Estimate scale</tspan></text>
+<rect class="node" x="34.0" y="150.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="182.0" text-anchor="middle"><tspan x="109.0" dy="0">simple</tspan></text>
+<rect class="node" x="34.0" y="266.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="298.0" text-anchor="middle"><tspan x="109.0" dy="0">data</tspan></text>
+<rect class="node" x="34.0" y="382.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="414.0" text-anchor="middle"><tspan x="109.0" dy="0">bottleneck</tspan></text>
+<rect class="node" x="266.0" y="150.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="341.0" y="182.0" text-anchor="middle"><tspan x="341.0" dy="0">Add fallback</tspan></text>
+<rect class="node" x="498.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="573.0" y="66.0" text-anchor="middle"><tspan x="573.0" dy="0">Wrap</tspan></text>
 </svg>

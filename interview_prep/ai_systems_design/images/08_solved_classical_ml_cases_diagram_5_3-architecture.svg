@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="894" height="1190" viewBox="0 0 894 1190" role="img" aria-labelledby="title desc">
-<title>08_solved_classical_ml_cases diagram 5: 3. Architecture</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="914" height="354" viewBox="0 0 914 354" role="img" aria-labelledby="title desc">
+<title>Ads ranking high-level design</title>
 <desc>Generated SVG rendering of a Mermaid flowchart.</desc>
 <defs>
 <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
@@ -7,50 +7,29 @@
 <style>
 .canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
 </style>
-<rect class="canvas" x="0" y="0" width="894" height="1190"/>
-<path class="edge" d="M 143.0 96.0 L 151.0 158.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 151.0 212.0 L 147.0 274.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 147.0 328.0 L 123.0 390.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 123.0 444.0 C 139.0 444.0, 139.0 506.0, 155.0 506.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 155.0 560.0 L 139.0 622.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 139.0 684.0 L 143.0 746.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 143.0 800.0 L 151.0 862.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 151.0 916.0 C 130.0 916.0, 130.0 978.0, 109.0 978.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 151.0 916.0 C 249.0 916.0, 249.0 978.0, 347.0 978.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 451.0 88.0 L 451.0 158.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 350.0 185.0 L 268.0 185.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 743.0 88.0 L 747.0 158.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 747.0 212.0 C 435.0 212.0, 435.0 390.0, 123.0 390.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 747.0 212.0 C 451.0 212.0, 451.0 506.0, 155.0 506.0" marker-end="url(#arrow)"/>
-<path class="edge" d="M 347.0 1040.0 C 247.0 1040.0, 247.0 1102.0, 147.0 1102.0" marker-end="url(#arrow)"/>
-<rect class="node" x="34.0" y="34.0" width="218" height="62" rx="8"/>
-<text class="node-text" x="143.0" y="70.0" text-anchor="middle"><tspan x="143.0" dy="-9">Ad request with context</tspan><tspan x="143.0" dy="18">and slot</tspan></text>
-<rect class="node" x="34.0" y="158.0" width="234" height="54" rx="8"/>
-<text class="node-text" x="151.0" y="190.0" text-anchor="middle"><tspan x="151.0" dy="0">Targeting and eligibility</tspan></text>
-<rect class="node" x="34.0" y="274.0" width="226" height="54" rx="8"/>
-<text class="node-text" x="147.0" y="306.0" text-anchor="middle"><tspan x="147.0" dy="0">Candidate ads from index</tspan></text>
-<rect class="node" x="34.0" y="390.0" width="178" height="54" rx="8"/>
-<text class="node-text" x="123.0" y="422.0" text-anchor="middle"><tspan x="123.0" dy="0">CTR/CVR prediction</tspan></text>
-<rect class="node" x="34.0" y="506.0" width="242" height="54" rx="8"/>
-<text class="node-text" x="155.0" y="538.0" text-anchor="middle"><tspan x="155.0" dy="0">Budget pacing and delivery</tspan></text>
-<rect class="node" x="34.0" y="622.0" width="210" height="62" rx="8"/>
-<text class="node-text" x="139.0" y="658.0" text-anchor="middle"><tspan x="139.0" dy="-9">Second-price or hybrid</tspan><tspan x="139.0" dy="18">auction</tspan></text>
-<rect class="node" x="34.0" y="746.0" width="218" height="54" rx="8"/>
-<text class="node-text" x="143.0" y="778.0" text-anchor="middle"><tspan x="143.0" dy="0">Reserve/relevance floor</tspan></text>
-<rect class="node" x="34.0" y="862.0" width="234" height="54" rx="8"/>
-<text class="node-text" x="151.0" y="894.0" text-anchor="middle"><tspan x="151.0" dy="0">Ad rendering and labeling</tspan></text>
-<rect class="node" x="34.0" y="978.0" width="150" height="54" rx="8"/>
-<text class="node-text" x="109.0" y="1010.0" text-anchor="middle"><tspan x="109.0" dy="0">Exposure log</tspan></text>
-<rect class="node" x="266.0" y="978.0" width="162" height="62" rx="8"/>
-<text class="node-text" x="347.0" y="1014.0" text-anchor="middle"><tspan x="347.0" dy="-9">Impression/click</tspan><tspan x="347.0" dy="18">accounting</tspan></text>
-<rect class="node" x="334.0" y="34.0" width="234" height="54" rx="8"/>
-<text class="node-text" x="451.0" y="66.0" text-anchor="middle"><tspan x="451.0" dy="0">Advertisers and campaigns</tspan></text>
-<rect class="node" x="350.0" y="158.0" width="202" height="54" rx="8"/>
-<text class="node-text" x="451.0" y="190.0" text-anchor="middle"><tspan x="451.0" dy="0">Ad index with budgets</tspan></text>
-<rect class="node" x="650.0" y="34.0" width="186" height="54" rx="8"/>
-<text class="node-text" x="743.0" y="66.0" text-anchor="middle"><tspan x="743.0" dy="0">Clicks, conversions</tspan></text>
-<rect class="node" x="634.0" y="158.0" width="226" height="54" rx="8"/>
-<text class="node-text" x="747.0" y="190.0" text-anchor="middle"><tspan x="747.0" dy="0">Feedback and attribution</tspan></text>
-<rect class="node" x="34.0" y="1102.0" width="226" height="54" rx="8"/>
-<text class="node-text" x="147.0" y="1134.0" text-anchor="middle"><tspan x="147.0" dy="0">Immutable billing ledger</tspan></text>
+<rect class="canvas" x="0" y="0" width="914" height="354"/>
+<path class="edge" d="M 184.0 61.0 L 266.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 416.0 61.0 L 498.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 184.0 177.0 L 266.0 177.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 416.0 177.0 L 498.0 177.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 573.0 150.0 C 689.0 150.0, 689.0 88.0, 805.0 88.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 266.0 C 341.0 266.0, 341.0 88.0, 573.0 88.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect class="label-bg" x="310.5" y="163.0" width="61.0" height="20" rx="4"/>
+<text class="edge-label" x="341.0" y="177.0" text-anchor="middle">version</text>
+<rect class="node" x="34.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="66.0" text-anchor="middle"><tspan x="109.0" dy="0">Ad request</tspan></text>
+<rect class="node" x="266.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="341.0" y="66.0" text-anchor="middle"><tspan x="341.0" dy="0">Eligibility</tspan></text>
+<rect class="node" x="498.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="573.0" y="66.0" text-anchor="middle"><tspan x="573.0" dy="0">CTR/CVR score</tspan></text>
+<rect class="node" x="34.0" y="150.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="182.0" text-anchor="middle"><tspan x="109.0" dy="0">auction</tspan></text>
+<rect class="node" x="266.0" y="150.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="341.0" y="182.0" text-anchor="middle"><tspan x="341.0" dy="0">Render ad</tspan></text>
+<rect class="node" x="498.0" y="150.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="573.0" y="182.0" text-anchor="middle"><tspan x="573.0" dy="0">Billing event</tspan></text>
+<rect class="node" x="730.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="805.0" y="66.0" text-anchor="middle"><tspan x="805.0" dy="0">Ledger</tspan></text>
+<rect class="node" x="34.0" y="266.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="298.0" text-anchor="middle"><tspan x="109.0" dy="0">Model updates</tspan></text>
 </svg>

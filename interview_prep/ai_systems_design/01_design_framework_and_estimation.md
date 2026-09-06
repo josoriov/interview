@@ -1,6 +1,8 @@
 # 01 — Universal Design Framework and Estimation
 
-## 1. Turn the idea into a contract
+This chapter adapts the ByteByteGo system design structure for AI systems. The point is to move in a predictable order: clarify, estimate, draw a simple blueprint, define data and interfaces, then discuss scale and failure modes. Resist the urge to start with Kafka, a feature store, fine-tuning, or multi-region deployment unless a requirement pulls you there.
+
+## 1. Requirements clarification
 
 Before drawing, fill in:
 
@@ -10,15 +12,14 @@ Prediction/generation unit:
 Input available at that instant:
 Output and how it is consumed:
 Business goal and cost of harm:
-Latency, availability, freshness:
-Volume and growth:
-Privacy, region, explainability, budget:
+Functional requirements:
+Non-functional requirements:
 Out of scope:
 ```
 
-Fraud example: score one transaction during authorization; approve, challenge, or decline; p99 below 100 ms; fraud loss competes with false-decline cost.
+Fraud example: score one card-not-present transaction during authorization; return a risk score and reason codes; policy approves, challenges, or declines; p99 below 100 ms; false declines and fraud loss both matter.
 
-## 2. Build a metric tree
+Separate metrics into:
 
 1. **Business:** revenue, loss prevented, time saved, resolution.
 2. **Product/online:** CTR, conversion, retention, acceptance, task success.
@@ -34,65 +35,98 @@ Fraud example: score one transaction during authorization; approve, challenge, o
 | Retrieval           | recall@K, MRR, NDCG                    | Evaluate separately from generation |
 | Generation          | task success, groundedness, factuality | Requires a rubric/humans            |
 
-A score becomes a decision through a policy. Choose thresholds by expected cost:
+## 2. Capacity estimation
 
-```text
-cost = FP × C_FP + FN × C_FN + human_reviews × C_review
-```
-
-Two thresholds can create approve/review/reject bands. Evaluate probability calibration if downstream users interpret scores probabilistically.
-
-## 3. Back-of-the-envelope estimation
-
-State assumptions, round, and preserve units.
+Estimate only what changes the design. State assumptions, round, and preserve units.
 
 ```text
 average QPS = requests/day ÷ 86,400
-peak QPS ≈ average QPS × peak factor (often 3–10)
+peak QPS ≈ average QPS × peak factor
 concurrency ≈ QPS × latency_seconds
 storage/day = events/day × bytes/event × replication
 instances ≈ peak_QPS ÷ throughput_per_instance ÷ target_utilization
 ```
 
-Example: 100M requests/day ≈ 1.2k average QPS; at 5× peak, 6k QPS. At 200 ms, peak concurrency is about 1.2k.
+Example: 100M requests/day is about 1.2k average QPS; at 5x peak, 6k QPS. At 200 ms, peak concurrency is about 1.2k.
 
-Vector example: 50M × 768 dimensions × 2 bytes ≈ 77 GB for raw vectors. ANN graph, metadata, replicas, and allocator overhead can multiply that number, driving sharding and RAM decisions.
+For vector systems:
 
-For LLMs, estimate tokens rather than only requests:
+```text
+raw vector bytes = count × dimensions × bytes/value
+```
+
+For LLM systems:
 
 ```text
 required token throughput ≈ QPS × (input_tokens + output_tokens)
 request cost ≈ input_tokens × input_price + output_tokens × output_price
 ```
 
-Prefill and autoregressive decode behave differently; benchmark the production length distribution. Long contexts consume KV-cache memory and reduce concurrency.
+If the estimates are small, say so and keep the architecture simple. If they are large, name the specific pressure: memory, write rate, tail latency, GPU concurrency, data freshness, or regional latency.
 
-## 4. Requirements and architecture planes
+## 3. Create high-level design
 
-Functional requirements include modes, personalization, explanations/citations, feedback, administration, audit, and deletion. Non-functional requirements include percentile latency, availability, consistency, freshness, RPO/RTO, privacy, residence, explainability, and cost ceiling.
+Start with a box diagram that shows the core data flow. Get interviewer buy-in before deep diving.
 
-![4. Requirements and architecture planes](images/01_design_framework_and_estimation_diagram_1_4-requirements-and-architecture-planes.svg)
+![ByteByteGo-style AI design framework](images/01_design_framework_and_estimation_diagram_1_4-requirements-and-architecture-planes.svg)
 
-Log exposure before outcome. Without model/version/items shown, later clicks or conversions cannot be attributed.
+A good first-pass AI diagram usually has:
 
-## 5. Core trade-offs
+- request path: client → API/orchestrator → data or retrieval → model/rules → policy → response;
+- learning path: logs/outcomes → dataset/evaluation → training or prompt/index update → registry/config;
+- one explicit fallback or human-review point when harm is material.
 
-- **Batch vs. streaming:** batch is cheaper and simpler when hours are acceptable; streaming buys freshness at the cost of state, ordering, replay, and on-call burden.
-- **Sync vs. async:** sync for bounded interactive work; async for long/variable/expensive tasks. Async needs job ID, progress, cancellation, idempotency, and polling/webhook.
-- **Strong vs. eventual consistency:** features/catalogs usually tolerate staleness; permissions, money, and irreversible effects may not.
-- **Precompute vs. on-read:** precompute popular/expensive results; compute highly personalized/fresh results. Two-stage systems often combine both.
-- **Quality vs. latency/cost:** cascades send easy cases to small models and uncertain cases to expensive ones.
+Do not add caches, queues, streaming, sharding, active-active regions, feature stores, fine-tuning, or agents in the high-level diagram unless the requirements already force them.
 
-## 6. Failure design
+## 4. Data design
 
-For every dependency define timeout, retryability, idempotency, circuit breaking, fallback, backpressure, isolation, and recovery. Retries use bounded exponential backoff with jitter and only for transient errors. Bounded queues and load shedding prevent overload from turning into infinite latency.
+ByteByteGo's database-design step maps to AI data design: entities, stores, schemas, labels, features, indexes, and retention.
 
-A 200 ms p99 needs an explicit budget, for example: gateway 15, feature fetch 30, retrieval 35, ranker 60, policy 15, network/margin 45 ms. Parallelize independent work.
+Define:
 
-## 7. Phased evolution
+- source-of-truth entities and their IDs;
+- request, exposure, decision, and outcome events;
+- labels, maturity delay, and attribution window;
+- features available at prediction time;
+- embeddings, chunks, documents, or catalog records when retrieval is involved;
+- privacy, retention, deletion, and lineage requirements.
 
-- V0: rule, popularity, BM25, or small model; validate value and telemetry.
-- V1: batch training, simple serving, evaluation, A/B testing, fallback.
-- V2: streaming, ANN, personalization, fine-tuning, or multi-region only after a measurable trigger.
+Log exposure before outcome. Without model version, features, prompt/index version, candidates shown, and policy version, later clicks or decisions cannot be attributed.
 
-Say what triggers complexity: “Add streaming when feature staleness over ten minutes causes material loss,” not “we will eventually use Kafka.”
+## 5. Interface design
+
+Specify the contract between components. Keep it small:
+
+```text
+Request: entity/user/context, deadline, idempotency key, auth scope
+Response: prediction/ranking/answer/action proposal, confidence, reasons/citations, fallback state
+Events: exposure, decision, feedback/outcome, model/policy version
+Errors: retryable, not retryable, partial result, unavailable
+```
+
+For GenAI, tools need typed schemas, timeouts, least privilege, and clear read-vs-write classification. The executor enforces authorization; the prompt is not a security boundary.
+
+## 6. Scalability and performance
+
+Discuss bottlenecks only after the simple design is agreed on. Tie every optimization to a pressure:
+
+- high read QPS → cache, replica, precompute, or approximate retrieval;
+- high write/freshness demand → stream or incremental index update;
+- large catalog/vector memory → sharding, compression, or tiered retrieval;
+- tight p99 latency → parallel calls, smaller model, batching, deadline propagation;
+- high LLM cost → routing, shorter context, caching, distillation, or async workflow.
+
+A 200 ms p99 needs an explicit budget, for example: gateway 15, feature fetch 30, retrieval 35, ranker 60, policy 15, network/margin 45 ms.
+
+## 7. Reliability and resiliency
+
+For every dependency define timeout, retryability, idempotency, circuit breaking, fallback, backpressure, isolation, and recovery. Retries use bounded exponential backoff with jitter and only for transient errors.
+
+Common AI fallback ladder:
+
+1. current model or RAG path;
+2. previous model or previous index;
+3. rules, BM25, popularity, cached result, or smaller model;
+4. human review, async completion, or honest unavailability.
+
+Finish the interview by naming bottlenecks, one concrete improvement for the next scale tier, and how you would monitor, canary, and roll back the system.
