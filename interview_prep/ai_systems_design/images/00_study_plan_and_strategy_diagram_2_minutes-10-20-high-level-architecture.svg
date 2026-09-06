@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1626" height="238" viewBox="0 0 1626 238" role="img" aria-labelledby="title desc">
+<title>00_study_plan_and_strategy diagram 2: Minutes 10–20: high-level architecture</title>
+<desc>Generated SVG rendering of a Mermaid flowchart.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+</defs>
+<style>
+.canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
+</style>
+<rect class="canvas" x="0" y="0" width="1626" height="238"/>
+<path class="edge" d="M 184.0 61.0 L 266.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 492.0 61.0 L 574.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 760.0 61.0 L 842.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 992.0 61.0 L 1074.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 1292.0 61.0 L 1374.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 492.0 61.0 C 933.0 61.0, 933.0 177.0, 1374.0 177.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect class="label-bg" x="906.0" y="105.0" width="54.0" height="20" rx="4"/>
+<text class="edge-label" x="933.0" y="119.0" text-anchor="middle">traces</text>
+<path class="edge" d="M 992.0 61.0 C 1183.0 61.0, 1183.0 177.0, 1374.0 177.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect class="label-bg" x="1135.0" y="105.0" width="96.0" height="20" rx="4"/>
+<text class="edge-label" x="1183.0" y="119.0" text-anchor="middle">model output</text>
+<path class="edge" d="M 1183.0 88.0 C 1333.0 88.0, 1333.0 150.0, 1483.0 150.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect class="label-bg" x="1299.0" y="105.0" width="68.0" height="20" rx="4"/>
+<text class="edge-label" x="1333.0" y="119.0" text-anchor="middle">outcomes</text>
+<rect class="node" x="34.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="66.0" text-anchor="middle"><tspan x="109.0" dy="0">User</tspan></text>
+<rect class="node" x="266.0" y="34.0" width="226" height="54" rx="8"/>
+<text class="node-text" x="379.0" y="66.0" text-anchor="middle"><tspan x="379.0" dy="0">Gateway and orchestrator</tspan></text>
+<rect class="node" x="574.0" y="34.0" width="186" height="54" rx="8"/>
+<text class="node-text" x="667.0" y="66.0" text-anchor="middle"><tspan x="667.0" dy="0">Retrieval and tools</tspan></text>
+<rect class="node" x="842.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="917.0" y="66.0" text-anchor="middle"><tspan x="917.0" dy="0">LLM</tspan></text>
+<rect class="node" x="1074.0" y="34.0" width="218" height="54" rx="8"/>
+<text class="node-text" x="1183.0" y="66.0" text-anchor="middle"><tspan x="1183.0" dy="0">Validation and policies</tspan></text>
+<rect class="node" x="1374.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="1449.0" y="66.0" text-anchor="middle"><tspan x="1449.0" dy="0">Answer</tspan></text>
+<rect class="node" x="1374.0" y="150.0" width="218" height="54" rx="8"/>
+<text class="node-text" x="1483.0" y="182.0" text-anchor="middle"><tspan x="1483.0" dy="0">Evaluation and feedback</tspan></text>
+</svg>

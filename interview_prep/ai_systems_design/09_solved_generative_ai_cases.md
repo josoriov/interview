@@ -21,38 +21,13 @@ One million queries/day ≈ 12 average QPS and perhaps 60 peak. If the average u
 
 ### 4. Ingestion architecture
 
-```mermaid
-flowchart LR
-    sources[Source connectors and change events] --> raw[Raw versioned documents]
-    raw --> checks[Malware and type checks]
-    checks --> parser[Parser and OCR]
-    parser --> structure[Structure extraction]
-    structure --> acl[Classification and authoritative ACL snapshot]
-    acl --> chunks[Semantic chunks, parent links, and metadata]
-    chunks --> index[Embedding and lexical indexes]
-    index --> validation[Validation]
-    validation --> publish[Atomically published index version]
-```
+![4. Ingestion architecture](images/09_solved_generative_ai_cases_diagram_1_4-ingestion-architecture.svg)
 
 Use source document ID, content hash, version, effective time, tenant, owner, language, path, and ACL. Incremental upserts avoid re-embedding unchanged chunks. Deletion/tombstones propagate to both indices, caches, and replicas. The original document/ACL store is source of truth; indices are rebuildable.
 
 ### 5. Query architecture
 
-```mermaid
-flowchart LR
-    user[User] --> sso[SSO gateway]
-    sso --> identity[Derived identity, groups, and tenant]
-    identity --> limits[Rate limits]
-    limits --> safety[Query safety and classification]
-    safety --> retrieval[Hybrid retrieval with ACL filters]
-    retrieval --> fusion[Fusion and deduplication]
-    fusion --> rerank[Cross-encoder reranking]
-    rerank --> context[Context packing]
-    context --> llm[LLM with answer, abstention,<br/>and citation schema]
-    llm --> validation[Claim, citation, and safety validation]
-    validation --> answer[Streamed answer and<br/>authorized source links]
-    answer --> telemetry[Redacted traces and feedback]
-```
+![5. Query architecture](images/09_solved_generative_ai_cases_diagram_2_5-query-architecture.svg)
 
 Authorization is enforced at retrieval and again when resolving a source link. Never trust a tenant ID supplied in prompt text. Cache keys include tenant/access scope and policy version; avoid response caching for highly dynamic permissions.
 
@@ -112,26 +87,7 @@ Containment alone is dangerous: an agent can avoid escalation by giving bad answ
 
 ### 3. Architecture
 
-```mermaid
-flowchart TB
-    customer[Customer] --> gateway[Authenticated chat gateway]
-    gateway --> state[Conversation and orchestration state machine]
-    state --> rag[RAG over approved support content]
-    state --> readTools[Read-only order and account tools]
-    state --> proposal[Refund proposal tool]
-    proposal --> policy[Deterministic eligibility and policy service]
-    policy --> preview[Action preview]
-    preview --> approval{Confirmation required?}
-    approval -->|Yes| confirm[User or human confirmation]
-    approval -->|No| payment[Idempotent payment execution]
-    confirm --> payment
-    rag --> validator[Response validator]
-    readTools --> validator
-    payment --> validator
-    validator --> response[Streamed response]
-    state -. all steps .-> audit[Redacted immutable audit,<br/>evaluation traces, and support outcomes]
-    payment -. action result .-> audit
-```
+![3. Architecture](images/09_solved_generative_ai_cases_diagram_3_3-architecture.svg)
 
 The LLM proposes actions; a deterministic policy service checks identity, ownership, item, time window, previous refunds, amount limits, jurisdiction, risk signals, and agent version. The payment system accepts an idempotency key derived from case/action, preventing duplicate refunds after retry.
 
@@ -183,18 +139,7 @@ The strongest decision is not which LLM to use. It is separating probabilistic p
 
 Upload recordings up to two hours; return transcript, chaptered summary, decisions, and action items within five minutes after upload. This is asynchronous. Use a job ID, progress, cancellation, webhook, and idempotency key.
 
-```mermaid
-flowchart LR
-    upload[Recording upload] --> store[Object store]
-    store --> queue[Event and job queue]
-    queue --> media[Media validation and transcoding]
-    media --> asr[Chunked ASR and diarization]
-    asr --> transcript[Timestamped transcript merge]
-    transcript --> summary[Hierarchical summarization]
-    summary --> schema[Schema validation]
-    schema --> results[Encrypted result store]
-    results --> notification[Completion notification]
-```
+![Requirements and design](images/09_solved_generative_ai_cases_diagram_4_requirements-and-design.svg)
 
 Process audio in overlapping chunks; reconcile timestamps/speakers. Summarize chunks, then synthesize a global summary with references to transcript spans. Extract action items into a schema with owner, action, due date, evidence span, and confidence. Do not infer an owner/date when absent.
 

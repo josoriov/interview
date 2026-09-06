@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="766" height="1268" viewBox="0 0 766 1268" role="img" aria-labelledby="title desc">
+<title>08_solved_classical_ml_cases diagram 4: 4. Architecture</title>
+<desc>Generated SVG rendering of a Mermaid flowchart.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+</defs>
+<style>
+.canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
+</style>
+<rect class="canvas" x="0" y="0" width="766" height="1268"/>
+<path class="edge" d="M 109.0 88.0 L 127.0 150.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 127.0 212.0 L 139.0 274.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 139.0 336.0 L 139.0 398.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 139.0 478.0 L 147.0 540.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 147.0 602.0 L 123.0 664.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 123.0 744.0 L 119.0 806.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 119.0 886.0 L 111.0 948.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 341.0 88.0 C 364.0 88.0, 364.0 150.0, 387.0 150.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 387.0 204.0 C 267.0 204.0, 267.0 1064.0, 147.0 1064.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 111.0 1002.0 C 129.0 1002.0, 129.0 1064.0, 147.0 1064.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 147.0 1118.0 C 128.0 1118.0, 128.0 1180.0, 109.0 1180.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 147.0 1118.0 C 244.0 1118.0, 244.0 1180.0, 341.0 1180.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 599.0 88.0 C 621.0 88.0, 621.0 150.0, 643.0 150.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 554.0 181.0 C 399.0 181.0, 399.0 305.0, 244.0 305.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 643.0 212.0 C 391.0 212.0, 391.0 398.0, 139.0 398.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 643.0 212.0 C 383.0 212.0, 383.0 664.0, 123.0 664.0" marker-end="url(#arrow)"/>
+<rect class="node" x="34.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="66.0" text-anchor="middle"><tspan x="109.0" dy="0">Query</tspan></text>
+<rect class="node" x="34.0" y="150.0" width="186" height="62" rx="8"/>
+<text class="node-text" x="127.0" y="186.0" text-anchor="middle"><tspan x="127.0" dy="-9">Query understanding</tspan><tspan x="127.0" dy="18">intent, spell, NER</tspan></text>
+<rect class="node" x="34.0" y="274.0" width="210" height="62" rx="8"/>
+<text class="node-text" x="139.0" y="310.0" text-anchor="middle"><tspan x="139.0" dy="-9">Eligibility and</tspan><tspan x="139.0" dy="18">restricted-item filter</tspan></text>
+<rect class="node" x="34.0" y="398.0" width="210" height="80" rx="8"/>
+<text class="node-text" x="139.0" y="443.0" text-anchor="middle"><tspan x="139.0" dy="-18">Parallel retrieval</tspan><tspan x="139.0" dy="18">lexical, dense, image,</tspan><tspan x="139.0" dy="18">popularity</tspan></text>
+<rect class="node" x="34.0" y="540.0" width="226" height="62" rx="8"/>
+<text class="node-text" x="147.0" y="576.0" text-anchor="middle"><tspan x="147.0" dy="-9">Merge, deduplicate, keep</tspan><tspan x="147.0" dy="18">source scores</tspan></text>
+<rect class="node" x="34.0" y="664.0" width="178" height="80" rx="8"/>
+<text class="node-text" x="123.0" y="709.0" text-anchor="middle"><tspan x="123.0" dy="-18">Ranker with</tspan><tspan x="123.0" dy="18">availability/price</tspan><tspan x="123.0" dy="18">features</tspan></text>
+<rect class="node" x="34.0" y="806.0" width="170" height="80" rx="8"/>
+<text class="node-text" x="119.0" y="851.0" text-anchor="middle"><tspan x="119.0" dy="-18">Policy re-ranker</tspan><tspan x="119.0" dy="18">diversity, market</tspan><tspan x="119.0" dy="18">restrictions</tspan></text>
+<rect class="node" x="34.0" y="948.0" width="154" height="54" rx="8"/>
+<text class="node-text" x="111.0" y="980.0" text-anchor="middle"><tspan x="111.0" dy="0">Organic results</tspan></text>
+<rect class="node" x="266.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="341.0" y="66.0" text-anchor="middle"><tspan x="341.0" dy="0">Ad server</tspan></text>
+<rect class="node" x="302.0" y="150.0" width="170" height="54" rx="8"/>
+<text class="node-text" x="387.0" y="182.0" text-anchor="middle"><tspan x="387.0" dy="0">Sponsored auction</tspan></text>
+<rect class="node" x="34.0" y="1064.0" width="226" height="54" rx="8"/>
+<text class="node-text" x="147.0" y="1096.0" text-anchor="middle"><tspan x="147.0" dy="0">Blended page with labels</tspan></text>
+<rect class="node" x="34.0" y="1180.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="1212.0" text-anchor="middle"><tspan x="109.0" dy="0">Exposure log</tspan></text>
+<rect class="node" x="266.0" y="1180.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="341.0" y="1212.0" text-anchor="middle"><tspan x="341.0" dy="0">Client</tspan></text>
+<rect class="node" x="498.0" y="34.0" width="202" height="54" rx="8"/>
+<text class="node-text" x="599.0" y="66.0" text-anchor="middle"><tspan x="599.0" dy="0">Catalog change stream</tspan></text>
+<rect class="node" x="554.0" y="150.0" width="178" height="62" rx="8"/>
+<text class="node-text" x="643.0" y="186.0" text-anchor="middle"><tspan x="643.0" dy="-9">Online index and</tspan><tspan x="643.0" dy="18">availability store</tspan></text>
+</svg>

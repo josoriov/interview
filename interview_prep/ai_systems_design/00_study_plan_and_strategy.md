@@ -50,32 +50,11 @@ Define exact input/output, business metric, offline proxy, online metric, guardr
 
 ### Minutes 10–20: high-level architecture
 
-```mermaid
-flowchart LR
-    sources[Data sources] --> storage[Ingestion and storage]
-    storage --> training[Model training]
-    training --> registry[Model registry]
-    registry --> serving[Online serving]
-    storage --> features[Online features or index]
-    features --> serving
-    serving --> product[Product]
-    product --> telemetry[Logs, outcomes, and feedback]
-    telemetry -. feedback loop .-> storage
-```
+![Minutes 10–20: high-level architecture](images/00_study_plan_and_strategy_diagram_1_minutes-10-20-high-level-architecture.svg)
 
 For GenAI:
 
-```mermaid
-flowchart LR
-    user[User] --> gateway[Gateway and orchestrator]
-    gateway --> context[Retrieval and tools]
-    context --> llm[LLM]
-    llm --> validation[Validation and policies]
-    validation --> answer[Answer]
-    gateway -. traces .-> telemetry[Evaluation and feedback]
-    llm -. model output .-> telemetry
-    validation -. outcomes .-> telemetry
-```
+![Minutes 10–20: high-level architecture](images/00_study_plan_and_strategy_diagram_2_minutes-10-20-high-level-architecture.svg)
 
 ### Minutes 20–35: deep dives
 

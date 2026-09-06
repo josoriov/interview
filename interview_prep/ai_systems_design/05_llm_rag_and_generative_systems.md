@@ -16,40 +16,13 @@ Hybrid systems are usually strongest: models handle ambiguity; deterministic sof
 
 ## Reference architecture
 
-```mermaid
-flowchart TB
-    client[Client] --> gateway[Gateway]
-    gateway --> input[Input policy]
-    input --> orchestrator[Orchestrator]
-    orchestrator --> retrieval[Retrieval]
-    orchestrator --> tools[Authorized tools]
-    orchestrator --> memory[Consented memory]
-    orchestrator --> router[Model router]
-    retrieval --> router
-    tools --> router
-    memory --> router
-    router --> llm[LLM]
-    llm --> validation[Grounding and output validation]
-    validation --> response[Response]
-    orchestrator -. traces .-> telemetry[Evaluation and feedback]
-    validation -. outcomes .-> telemetry
-```
+![Reference architecture](images/05_llm_rag_and_generative_systems_diagram_1_reference-architecture.svg)
 
 A model router may use risk, language, complexity, latency, context length, and budget. Start with one route; add cascades only when measured value justifies them.
 
 ## RAG ingestion
 
-```mermaid
-flowchart LR
-    connectors[Connectors] --> parsing[Parsing and OCR]
-    parsing --> normalize[Normalization]
-    normalize --> acl[Classification and ACLs]
-    acl --> chunks[Semantic chunking]
-    chunks --> metadata[Metadata enrichment]
-    metadata --> embeddings[Embedding generation]
-    embeddings --> indexes[Vector and lexical indexes]
-    indexes --> publish[Published index version]
-```
+![RAG ingestion](images/05_llm_rag_and_generative_systems_diagram_2_rag-ingestion.svg)
 
 Preserve headings, tables, pages, dates, links, and OCR confidence. Chunk on semantic boundaries. Small chunks improve precision but lose context; large chunks add noise/tokens. Overlap improves continuity but duplicates storage/results. Evaluate multiple sizes; parent-child retrieval can find a small chunk and return its larger section.
 
@@ -64,16 +37,7 @@ Use document ID + content hash + version for incremental updates. Tombstone dele
 - Hybrid retrieval plus rank fusion often improves coverage.
 - Metadata filters enforce tenant, ACL, date, language, and product scope.
 
-```mermaid
-flowchart LR
-    query[Query] --> rewrite[Classify or rewrite if needed]
-    rewrite --> dense[Dense retrieval]
-    rewrite --> lexical[Lexical retrieval]
-    dense --> fusion[Fusion and deduplication]
-    lexical --> fusion
-    fusion --> rerank[Cross-encoder reranking]
-    rerank --> context[Diversify and pack context]
-```
+![Retrieval and context](images/05_llm_rag_and_generative_systems_diagram_3_retrieval-and-context.svg)
 
 Rewriting may alter intent, so retain the original and evaluate. A reranker adds quality over top 20–100 candidates at extra latency. Measure each stage independently.
 
@@ -139,17 +103,7 @@ The interview argument is: given concurrency, mean/max context length, and the K
 
 Every tool needs an unambiguous purpose, typed schema, structured output, least privilege, timeout, safe retry/idempotency, read-vs-write classification, audit log, and compensation where possible. The executor—not the prompt—must enforce authorization.
 
-```mermaid
-flowchart LR
-    plan[Plan] --> choose[Choose tool]
-    choose --> authorize[Authorize and validate]
-    authorize --> execute[Execute]
-    execute --> observe[Observe result]
-    observe --> decision{Task complete?}
-    decision -->|No, within budget| plan
-    decision -->|Yes| done[Return result]
-    decision -->|A limit was reached| stop[Stop or escalate]
-```
+![Tools and agents](images/05_llm_rag_and_generative_systems_diagram_4_tools-and-agents.svg)
 
 Add loop detection, cancellation, checkpoints, and partial results. High-impact actions follow preview → explicit human confirmation → idempotent execution.
 

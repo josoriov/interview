@@ -15,34 +15,7 @@ Use this for the final review, not as a substitute for the full material.
 
 ## Universal diagram
 
-```mermaid
-flowchart TB
-    subgraph offline[Offline path]
-        sources[Sources] --> raw[Raw and versioned data]
-        raw --> validation[Validation]
-        validation --> features[Labels and features]
-        features --> training[Train and evaluate]
-        training --> registry[Registry]
-    end
-
-    subgraph online[Online path]
-        request[Request] --> auth[Authentication and quota]
-        auth --> context[Features or retrieval]
-        context --> model[Model]
-        model --> policy[Policy and validation]
-        policy --> response[Response]
-        response --> trace[Exposure and trace]
-        trace --> outcome[Outcome and feedback]
-    end
-
-    subgraph control[Control plane]
-        controls[Versions, configurations, permissions,<br/>experiments, gates, kill switches, and audit]
-    end
-
-    registry -. deployment .-> model
-    outcome -. learning loop .-> sources
-    controls -. governs .-> online
-```
+![Universal diagram](images/11_interview_cheat_sheet_diagram_1_universal-diagram.svg)
 
 ## Numbers
 
@@ -128,15 +101,7 @@ Quote dollar figures only as order-of-magnitude anchors (e.g., $/GPU-hr and $/M 
 
 ## Evaluation and operations
 
-```mermaid
-flowchart LR
-    unit[Unit tests] --> component[Component tests]
-    component --> e2e[End-to-end tests]
-    e2e --> offline[Offline evaluation]
-    offline --> shadow[Shadow deployment]
-    shadow --> canary[Canary deployment]
-    canary --> experiment[A/B experiment]
-```
+![Evaluation and operations](images/11_interview_cheat_sheet_diagram_2_evaluation-and-operations.svg)
 
 - Versioned representative, hard, no-answer, and adversarial set.
 - Rubric and human calibration; do not trust one LLM judge.
@@ -162,14 +127,6 @@ flowchart LR
 
 Return to the chain:
 
-```mermaid
-flowchart LR
-    user[User and action] --> metric[Success metric]
-    metric --> data[Labels and data]
-    data --> model[Baseline and model]
-    model --> serving[Serving path]
-    serving --> feedback[Feedback loop]
-    feedback --> failure[Failure handling]
-```
+![If you get stuck](images/11_interview_cheat_sheet_diagram_3_if-you-get-stuck.svg)
 
 State an assumption, choose a simple option, explain why, and continue. A coherent incomplete design is stronger than an unconnected list of technologies.

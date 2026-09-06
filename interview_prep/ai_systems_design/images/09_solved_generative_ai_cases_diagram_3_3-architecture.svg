@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="846" height="1392" viewBox="0 0 846 1392" role="img" aria-labelledby="title desc">
+<title>09_solved_generative_ai_cases diagram 3: 3. Architecture</title>
+<desc>Generated SVG rendering of a Mermaid flowchart.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+</defs>
+<style>
+.canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
+</style>
+<rect class="canvas" x="0" y="0" width="846" height="1392"/>
+<path class="edge" d="M 109.0 88.0 C 132.0 88.0, 132.0 150.0, 155.0 150.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 155.0 204.0 L 127.0 266.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 127.0 346.0 L 151.0 408.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 220.0 306.0 C 331.5 306.0, 331.5 408.0, 443.0 408.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 220.0 306.0 C 419.0 306.0, 419.0 435.0, 618.0 435.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 618.0 435.0 C 443.0 435.0, 443.0 563.0, 268.0 563.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 151.0 594.0 C 130.0 594.0, 130.0 656.0, 109.0 656.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 710.0 L 139.0 772.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 139.0 860.0 L 155.0 922.0" marker-end="url(#arrow)"/>
+<rect class="label-bg" x="125.0" y="877.0" width="44.0" height="20" rx="4"/>
+<text class="edge-label" x="147.0" y="891.0" text-anchor="middle">Yes</text>
+<path class="edge" d="M 139.0 860.0 L 123.0 1038.0" marker-end="url(#arrow)"/>
+<rect class="label-bg" x="109.0" y="935.0" width="44.0" height="20" rx="4"/>
+<text class="edge-label" x="131.0" y="949.0" text-anchor="middle">No</text>
+<path class="edge" d="M 155.0 976.0 C 139.0 976.0, 139.0 1038.0, 123.0 1038.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 151.0 470.0 L 123.0 1162.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 443.0 470.0 C 283.0 470.0, 283.0 1162.0, 123.0 1162.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 123.0 1100.0 L 123.0 1162.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 123.0 1216.0 L 119.0 1304.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 127.0 346.0 C 269.0 346.0, 269.0 1162.0, 411.0 1162.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect class="label-bg" x="231.5" y="740.0" width="75.0" height="20" rx="4"/>
+<text class="edge-label" x="269.0" y="754.0" text-anchor="middle">all steps</text>
+<path class="edge" d="M 123.0 1100.0 C 267.0 1100.0, 267.0 1162.0, 411.0 1162.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect class="label-bg" x="215.5" y="1117.0" width="103.0" height="20" rx="4"/>
+<text class="edge-label" x="267.0" y="1131.0" text-anchor="middle">action result</text>
+<rect class="node" x="34.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="66.0" text-anchor="middle"><tspan x="109.0" dy="0">Customer</tspan></text>
+<rect class="node" x="34.0" y="150.0" width="242" height="54" rx="8"/>
+<text class="node-text" x="155.0" y="182.0" text-anchor="middle"><tspan x="155.0" dy="0">Authenticated chat gateway</tspan></text>
+<rect class="node" x="34.0" y="266.0" width="186" height="80" rx="8"/>
+<text class="node-text" x="127.0" y="311.0" text-anchor="middle"><tspan x="127.0" dy="-18">Conversation and</tspan><tspan x="127.0" dy="18">orchestration state</tspan><tspan x="127.0" dy="18">machine</tspan></text>
+<rect class="node" x="34.0" y="408.0" width="234" height="62" rx="8"/>
+<text class="node-text" x="151.0" y="444.0" text-anchor="middle"><tspan x="151.0" dy="-9">RAG over approved support</tspan><tspan x="151.0" dy="18">content</tspan></text>
+<rect class="node" x="350.0" y="408.0" width="186" height="62" rx="8"/>
+<text class="node-text" x="443.0" y="444.0" text-anchor="middle"><tspan x="443.0" dy="-9">Read-only order and</tspan><tspan x="443.0" dy="18">account tools</tspan></text>
+<rect class="node" x="618.0" y="408.0" width="194" height="54" rx="8"/>
+<text class="node-text" x="715.0" y="440.0" text-anchor="middle"><tspan x="715.0" dy="0">Refund proposal tool</tspan></text>
+<rect class="node" x="34.0" y="532.0" width="234" height="62" rx="8"/>
+<text class="node-text" x="151.0" y="568.0" text-anchor="middle"><tspan x="151.0" dy="-9">Deterministic eligibility</tspan><tspan x="151.0" dy="18">and policy service</tspan></text>
+<rect class="node" x="34.0" y="656.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="688.0" text-anchor="middle"><tspan x="109.0" dy="0">Action preview</tspan></text>
+<polygon class="diamond" points="139.0,772.0 244.0,816.0 139.0,860.0 34.0,816.0"/>
+<text class="node-text" x="139.0" y="821.0" text-anchor="middle"><tspan x="139.0" dy="0">Confirmation required?</tspan></text>
+<rect class="node" x="34.0" y="922.0" width="242" height="54" rx="8"/>
+<text class="node-text" x="155.0" y="954.0" text-anchor="middle"><tspan x="155.0" dy="0">User or human confirmation</tspan></text>
+<rect class="node" x="34.0" y="1038.0" width="178" height="62" rx="8"/>
+<text class="node-text" x="123.0" y="1074.0" text-anchor="middle"><tspan x="123.0" dy="-9">Idempotent payment</tspan><tspan x="123.0" dy="18">execution</tspan></text>
+<rect class="node" x="34.0" y="1162.0" width="178" height="54" rx="8"/>
+<text class="node-text" x="123.0" y="1194.0" text-anchor="middle"><tspan x="123.0" dy="0">Response validator</tspan></text>
+<rect class="node" x="34.0" y="1304.0" width="170" height="54" rx="8"/>
+<text class="node-text" x="119.0" y="1336.0" text-anchor="middle"><tspan x="119.0" dy="0">Streamed response</tspan></text>
+<rect class="node" x="294.0" y="1162.0" width="234" height="80" rx="8"/>
+<text class="node-text" x="411.0" y="1207.0" text-anchor="middle"><tspan x="411.0" dy="-18">Redacted immutable audit,</tspan><tspan x="411.0" dy="18">evaluation traces, and</tspan><tspan x="411.0" dy="18">support outcomes</tspan></text>
+</svg>

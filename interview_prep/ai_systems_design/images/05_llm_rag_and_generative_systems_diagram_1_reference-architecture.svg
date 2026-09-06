@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="706" height="1058" viewBox="0 0 706 1058" role="img" aria-labelledby="title desc">
+<title>05_llm_rag_and_generative_systems diagram 1: Reference architecture</title>
+<desc>Generated SVG rendering of a Mermaid flowchart.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+</defs>
+<style>
+.canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
+</style>
+<rect class="canvas" x="0" y="0" width="706" height="1058"/>
+<path class="edge" d="M 109.0 88.0 L 109.0 150.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 204.0 L 109.0 266.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 320.0 L 109.0 382.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 436.0 L 109.0 498.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 436.0 C 228.0 436.0, 228.0 498.0, 347.0 498.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 184.0 409.0 C 347.0 409.0, 347.0 525.0, 510.0 525.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 436.0 L 109.0 614.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 552.0 L 109.0 614.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 347.0 552.0 C 228.0 552.0, 228.0 614.0, 109.0 614.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 510.0 525.0 C 347.0 525.0, 347.0 641.0, 184.0 641.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 668.0 L 109.0 730.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 784.0 L 131.0 846.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 131.0 908.0 L 109.0 970.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 109.0 436.0 C 242.0 436.0, 242.0 970.0, 375.0 970.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect class="label-bg" x="215.0" y="689.0" width="54.0" height="20" rx="4"/>
+<text class="edge-label" x="242.0" y="703.0" text-anchor="middle">traces</text>
+<path class="edge" d="M 131.0 908.0 C 253.0 908.0, 253.0 970.0, 375.0 970.0" marker-end="url(#arrow)" stroke-dasharray="6 5"/>
+<rect class="label-bg" x="219.0" y="925.0" width="68.0" height="20" rx="4"/>
+<text class="edge-label" x="253.0" y="939.0" text-anchor="middle">outcomes</text>
+<rect class="node" x="34.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="66.0" text-anchor="middle"><tspan x="109.0" dy="0">Client</tspan></text>
+<rect class="node" x="34.0" y="150.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="182.0" text-anchor="middle"><tspan x="109.0" dy="0">Gateway</tspan></text>
+<rect class="node" x="34.0" y="266.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="298.0" text-anchor="middle"><tspan x="109.0" dy="0">Input policy</tspan></text>
+<rect class="node" x="34.0" y="382.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="414.0" text-anchor="middle"><tspan x="109.0" dy="0">Orchestrator</tspan></text>
+<rect class="node" x="34.0" y="498.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="530.0" text-anchor="middle"><tspan x="109.0" dy="0">Retrieval</tspan></text>
+<rect class="node" x="266.0" y="498.0" width="162" height="54" rx="8"/>
+<text class="node-text" x="347.0" y="530.0" text-anchor="middle"><tspan x="347.0" dy="0">Authorized tools</tspan></text>
+<rect class="node" x="510.0" y="498.0" width="162" height="54" rx="8"/>
+<text class="node-text" x="591.0" y="530.0" text-anchor="middle"><tspan x="591.0" dy="0">Consented memory</tspan></text>
+<rect class="node" x="34.0" y="614.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="646.0" text-anchor="middle"><tspan x="109.0" dy="0">Model router</tspan></text>
+<rect class="node" x="34.0" y="730.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="762.0" text-anchor="middle"><tspan x="109.0" dy="0">LLM</tspan></text>
+<rect class="node" x="34.0" y="846.0" width="194" height="62" rx="8"/>
+<text class="node-text" x="131.0" y="882.0" text-anchor="middle"><tspan x="131.0" dy="-9">Grounding and output</tspan><tspan x="131.0" dy="18">validation</tspan></text>
+<rect class="node" x="34.0" y="970.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="1002.0" text-anchor="middle"><tspan x="109.0" dy="0">Response</tspan></text>
+<rect class="node" x="266.0" y="970.0" width="218" height="54" rx="8"/>
+<text class="node-text" x="375.0" y="1002.0" text-anchor="middle"><tspan x="375.0" dy="0">Evaluation and feedback</tspan></text>
+</svg>

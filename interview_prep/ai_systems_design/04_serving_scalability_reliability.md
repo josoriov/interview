@@ -7,15 +7,7 @@
 - **Streaming:** continuously updates state/scores; requires ordering, watermarks, replay, and backpressure.
 - **Nearline/hybrid:** precompute candidates or embeddings, then rank online; common in search/recommendation.
 
-```mermaid
-flowchart LR
-    client[Client] --> gateway[Load balancer and gateway<br/>auth, quota, request ID]
-    gateway --> decision[Decision service]
-    decision --> features[Parallel feature and candidate fetch]
-    features --> inference[Model inference]
-    inference --> policy[Policy and validation]
-    policy --> response[Response]
-```
+![Serving patterns](images/04_serving_scalability_reliability_diagram_1_serving-patterns.svg)
 
 Propagate deadline and trace ID. Move telemetry and nonessential writes off the critical path.
 

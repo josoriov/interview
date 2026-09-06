@@ -2,19 +2,7 @@
 
 ## Data lifecycle
 
-```mermaid
-flowchart LR
-    sources[Sources] --> ingestion[Ingestion]
-    ingestion --> raw[Immutable raw data]
-    raw --> validation[Validation]
-    validation --> datasets[Versioned datasets]
-    datasets --> transforms[Transformations]
-    transforms --> features[Features and labels]
-    features --> training[Training and evaluation]
-    features --> serving[Serving]
-    serving --> feedback[Exposures and feedback]
-    feedback -. new events .-> ingestion
-```
+![Data lifecycle](images/03_data_features_training_diagram_1_data-lifecycle.svg)
 
 Trace every prediction to model/code, data/features, timestamp/entity, policy, experiment, and observed outcome. Redact or hash sensitive input; logs need purpose and retention.
 
@@ -42,17 +30,7 @@ Human labeling needs written guidelines, boundary examples, multiple annotators/
 
 ## Training pipeline
 
-```mermaid
-flowchart LR
-    snapshot[Validated snapshot] --> extraction[Point-in-time extraction]
-    extraction --> split[Split and preprocess]
-    split --> train[Train and tune]
-    train --> evaluation[Global and segment evaluation]
-    evaluation --> safety[Robustness and safety checks]
-    safety --> artifact[Artifact and model card]
-    artifact --> registry[Registry candidate]
-    registry --> rollout[Shadow and canary rollout]
-```
+![Training pipeline](images/03_data_features_training_diagram_2_training-pipeline.svg)
 
 Version code, config, dataset manifest, schema, feature/label definitions, seeds, environment/image, hyperparameters, metrics, and artifacts. Jobs should be idempotent, resumable from checkpoints, observable, and parameterized for backfills.
 

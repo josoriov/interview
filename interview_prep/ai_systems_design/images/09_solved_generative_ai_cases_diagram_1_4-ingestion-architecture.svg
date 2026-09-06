@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2842" height="130" viewBox="0 0 2842 130" role="img" aria-labelledby="title desc">
+<title>09_solved_generative_ai_cases diagram 1: 4. Ingestion architecture</title>
+<desc>Generated SVG rendering of a Mermaid flowchart.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+</defs>
+<style>
+.canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
+</style>
+<rect class="canvas" x="0" y="0" width="2842" height="130"/>
+<path class="edge" d="M 236.0 65.0 L 318.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 536.0 61.0 L 618.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 836.0 61.0 L 918.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 1068.0 61.0 L 1150.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 1344.0 61.0 L 1426.0 65.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 1668.0 65.0 L 1750.0 65.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 1968.0 65.0 L 2050.0 65.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 2252.0 65.0 L 2334.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 2484.0 61.0 L 2566.0 65.0" marker-end="url(#arrow)"/>
+<rect class="node" x="34.0" y="34.0" width="202" height="62" rx="8"/>
+<text class="node-text" x="135.0" y="70.0" text-anchor="middle"><tspan x="135.0" dy="-9">Source connectors and</tspan><tspan x="135.0" dy="18">change events</tspan></text>
+<rect class="node" x="318.0" y="34.0" width="218" height="54" rx="8"/>
+<text class="node-text" x="427.0" y="66.0" text-anchor="middle"><tspan x="427.0" dy="0">Raw versioned documents</tspan></text>
+<rect class="node" x="618.0" y="34.0" width="218" height="54" rx="8"/>
+<text class="node-text" x="727.0" y="66.0" text-anchor="middle"><tspan x="727.0" dy="0">Malware and type checks</tspan></text>
+<rect class="node" x="918.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="993.0" y="66.0" text-anchor="middle"><tspan x="993.0" dy="0">Parser and OCR</tspan></text>
+<rect class="node" x="1150.0" y="34.0" width="194" height="54" rx="8"/>
+<text class="node-text" x="1247.0" y="66.0" text-anchor="middle"><tspan x="1247.0" dy="0">Structure extraction</tspan></text>
+<rect class="node" x="1426.0" y="34.0" width="242" height="62" rx="8"/>
+<text class="node-text" x="1547.0" y="70.0" text-anchor="middle"><tspan x="1547.0" dy="-9">Classification and</tspan><tspan x="1547.0" dy="18">authoritative ACL snapshot</tspan></text>
+<rect class="node" x="1750.0" y="34.0" width="218" height="62" rx="8"/>
+<text class="node-text" x="1859.0" y="70.0" text-anchor="middle"><tspan x="1859.0" dy="-9">Semantic chunks, parent</tspan><tspan x="1859.0" dy="18">links, and metadata</tspan></text>
+<rect class="node" x="2050.0" y="34.0" width="202" height="62" rx="8"/>
+<text class="node-text" x="2151.0" y="70.0" text-anchor="middle"><tspan x="2151.0" dy="-9">Embedding and lexical</tspan><tspan x="2151.0" dy="18">indexes</tspan></text>
+<rect class="node" x="2334.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="2409.0" y="66.0" text-anchor="middle"><tspan x="2409.0" dy="0">Validation</tspan></text>
+<rect class="node" x="2566.0" y="34.0" width="242" height="62" rx="8"/>
+<text class="node-text" x="2687.0" y="70.0" text-anchor="middle"><tspan x="2687.0" dy="-9">Atomically published index</tspan><tspan x="2687.0" dy="18">version</tspan></text>
+</svg>

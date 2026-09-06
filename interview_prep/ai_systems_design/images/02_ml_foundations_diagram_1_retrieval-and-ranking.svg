@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1554" height="130" viewBox="0 0 1554 130" role="img" aria-labelledby="title desc">
+<title>02_ml_foundations diagram 1: Retrieval and ranking</title>
+<desc>Generated SVG rendering of a Mermaid flowchart.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+</defs>
+<style>
+.canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
+</style>
+<rect class="canvas" x="0" y="0" width="1554" height="130"/>
+<path class="edge" d="M 204.0 61.0 L 286.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 472.0 61.0 L 554.0 65.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 756.0 65.0 L 838.0 65.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 988.0 65.0 L 1070.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 1288.0 61.0 L 1370.0 61.0" marker-end="url(#arrow)"/>
+<rect class="node" x="34.0" y="34.0" width="170" height="54" rx="8"/>
+<text class="node-text" x="119.0" y="66.0" text-anchor="middle"><tspan x="119.0" dy="0">Millions of items</tspan></text>
+<rect class="node" x="286.0" y="34.0" width="186" height="54" rx="8"/>
+<text class="node-text" x="379.0" y="66.0" text-anchor="middle"><tspan x="379.0" dy="0">Eligibility filters</tspan></text>
+<rect class="node" x="554.0" y="34.0" width="202" height="62" rx="8"/>
+<text class="node-text" x="655.0" y="70.0" text-anchor="middle"><tspan x="655.0" dy="-9">Candidate retrieval</tspan><tspan x="655.0" dy="18">hundreds or thousands</tspan></text>
+<rect class="node" x="838.0" y="34.0" width="150" height="62" rx="8"/>
+<text class="node-text" x="913.0" y="70.0" text-anchor="middle"><tspan x="913.0" dy="-9">Ranker</tspan><tspan x="913.0" dy="18">tens of items</tspan></text>
+<rect class="node" x="1070.0" y="34.0" width="218" height="54" rx="8"/>
+<text class="node-text" x="1179.0" y="66.0" text-anchor="middle"><tspan x="1179.0" dy="0">Re-ranking and policies</tspan></text>
+<rect class="node" x="1370.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="1445.0" y="66.0" text-anchor="middle"><tspan x="1445.0" dy="0">Top K results</tspan></text>
+</svg>

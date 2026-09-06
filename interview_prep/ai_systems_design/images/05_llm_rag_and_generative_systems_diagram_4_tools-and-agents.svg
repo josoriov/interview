@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1702" height="238" viewBox="0 0 1702 238" role="img" aria-labelledby="title desc">
+<title>05_llm_rag_and_generative_systems diagram 4: Tools and agents</title>
+<desc>Generated SVG rendering of a Mermaid flowchart.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+</defs>
+<style>
+.canvas{fill:#ffffff}.group{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.4}.group-title{font:600 14px Arial,sans-serif;fill:#334155}.node{fill:#eef6ff;stroke:#2563eb;stroke-width:1.5}.diamond{fill:#fff7ed;stroke:#ea580c;stroke-width:1.5}.node-text{font:13px Arial,sans-serif;fill:#0f172a}.edge{fill:none;stroke:#475569;stroke-width:1.45}.edge-label{font:12px Arial,sans-serif;fill:#475569}.label-bg{fill:#ffffff;opacity:.92}
+</style>
+<rect class="canvas" x="0" y="0" width="1702" height="238"/>
+<path class="edge" d="M 184.0 61.0 L 266.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 416.0 61.0 L 498.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 708.0 61.0 L 790.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 940.0 61.0 L 1022.0 61.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 1172.0 61.0 L 1254.0 78.0" marker-end="url(#arrow)"/>
+<path class="edge" d="M 1254.0 78.0 L 184.0 61.0" marker-end="url(#arrow)"/>
+<rect class="label-bg" x="653.5" y="55.5" width="131.0" height="20" rx="4"/>
+<text class="edge-label" x="719.0" y="69.5" text-anchor="middle">No, within budget</text>
+<path class="edge" d="M 1424.0 78.0 L 1506.0 61.0" marker-end="url(#arrow)"/>
+<rect class="label-bg" x="1443.0" y="55.5" width="44.0" height="20" rx="4"/>
+<text class="edge-label" x="1465.0" y="69.5" text-anchor="middle">Yes</text>
+<path class="edge" d="M 1424.0 78.0 C 1505.5 78.0, 1505.5 150.0, 1587.0 150.0" marker-end="url(#arrow)"/>
+<rect class="label-bg" x="1433.0" y="100.0" width="145.0" height="20" rx="4"/>
+<text class="edge-label" x="1505.5" y="114.0" text-anchor="middle">A limit was reached</text>
+<rect class="node" x="34.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="109.0" y="66.0" text-anchor="middle"><tspan x="109.0" dy="0">Plan</tspan></text>
+<rect class="node" x="266.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="341.0" y="66.0" text-anchor="middle"><tspan x="341.0" dy="0">Choose tool</tspan></text>
+<rect class="node" x="498.0" y="34.0" width="210" height="54" rx="8"/>
+<text class="node-text" x="603.0" y="66.0" text-anchor="middle"><tspan x="603.0" dy="0">Authorize and validate</tspan></text>
+<rect class="node" x="790.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="865.0" y="66.0" text-anchor="middle"><tspan x="865.0" dy="0">Execute</tspan></text>
+<rect class="node" x="1022.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="1097.0" y="66.0" text-anchor="middle"><tspan x="1097.0" dy="0">Observe result</tspan></text>
+<polygon class="diamond" points="1339.0,34.0 1424.0,78.0 1339.0,122.0 1254.0,78.0"/>
+<text class="node-text" x="1339.0" y="83.0" text-anchor="middle"><tspan x="1339.0" dy="0">Task complete?</tspan></text>
+<rect class="node" x="1506.0" y="34.0" width="150" height="54" rx="8"/>
+<text class="node-text" x="1581.0" y="66.0" text-anchor="middle"><tspan x="1581.0" dy="0">Return result</tspan></text>
+<rect class="node" x="1506.0" y="150.0" width="162" height="54" rx="8"/>
+<text class="node-text" x="1587.0" y="182.0" text-anchor="middle"><tspan x="1587.0" dy="0">Stop or escalate</tspan></text>
+</svg>

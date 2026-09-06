@@ -27,29 +27,7 @@ Ten million 256-dimensional fp16 item embeddings are about 5 GB raw, feasible pe
 
 ### 4. Architecture
 
-```mermaid
-flowchart TB
-    interactions[Views, likes, and hides] --> events[Durable event log]
-    events --> lake[Lake or warehouse]
-    events --> counters[Streaming counters]
-    counters --> onlineStore[Online feature store]
-    lake --> featurePipeline[Feature pipelines]
-    featurePipeline --> training[Model training]
-    training --> registry[Model registry]
-
-    request[Feed request] --> gateway[Gateway]
-    gateway --> eligibility[Eligibility filtering]
-    eligibility --> candidates[Parallel candidate sources<br/>ANN, follows, trending, exploration]
-    onlineStore --> candidates
-    registry -. deployed models .-> candidates
-    candidates --> merge[Merge and deduplicate]
-    merge --> ranker[Ranker]
-    ranker --> policies[Policy re-ranker]
-    policies --> top[Top 20]
-    top --> exposure[Exposure log]
-    top --> client[Client]
-    exposure --> events
-```
+![4. Architecture](images/08_solved_classical_ml_cases_diagram_1_4-architecture.svg)
 
 ### 5. Data and modeling
 
@@ -104,25 +82,7 @@ Accuracy is unusable because fraud is rare. Dollar-weighted loss complements tra
 
 ### 3. Architecture
 
-```mermaid
-flowchart TB
-    authorization[Authorization request] --> gateway[Risk gateway]
-    gateway --> fetch[Parallel feature fetch]
-    account[Account, device, and merchant KV] --> fetch
-    velocity[Streaming velocity counters] --> fetch
-    fetch --> scoring[Rules and model]
-    scoring --> policy[Policy thresholds]
-    policy --> decision[Approve, challenge, or decline]
-    decision --> audit[Immutable decision log]
-
-    outcomes[Transactions, outcomes, and chargebacks] --> lake[Data lake]
-    audit --> lake
-    lake --> features[Point-in-time features and labels]
-    features --> training[Temporal training and evaluation]
-    training --> registry[Model registry]
-    registry --> canary[Canary deployment]
-    canary -. deployed candidate .-> scoring
-```
+![3. Architecture](images/08_solved_classical_ml_cases_diagram_2_3-architecture.svg)
 
 The final authorization service owns the decision. The ML service returns score/reasons and cannot directly move money.
 
@@ -165,23 +125,7 @@ Inspect each manufactured part from multiple cameras. Stop/divert defective unit
 
 ### 3. Design
 
-```mermaid
-flowchart TB
-    camera[Camera trigger] --> quality[Edge preprocessing and quality gate]
-    quality --> detector[Compact defect detector]
-    detector --> policy[Confidence policy]
-    policy --> decision[Accept, divert, or review]
-    decision --> buffer[Local durable log and buffer]
-    buffer -->|Asynchronous upload| store[Central object store]
-
-    labels[Operator and audit labels] --> store
-    store --> validation[Validation and versioning]
-    validation --> training[Training and augmentation]
-    training --> registry[Model registry]
-    registry --> optimize[Hardware-specific optimization]
-    optimize --> deploy[Signed staged edge deployment]
-    deploy -. new model .-> detector
-```
+![3. Design](images/08_solved_classical_ml_cases_diagram_3_3-design.svg)
 
 Edge serving removes network dependency and reduces latency/privacy exposure. A central control plane distributes signed artifacts and receives telemetry, but the line continues with the last known-good version.
 
@@ -221,26 +165,7 @@ V1 scopes out voice search and bidding optimization.
 
 ### 4. Architecture
 
-```mermaid
-flowchart TB
-    query[Query] --> parse[Query understanding<br/>intent, spell, NER]
-    parse --> eligibility[Eligibility and restricted-item filter]
-    eligibility --> retrieval[Parallel retrieval<br/>lexical, dense, image, popularity]
-    retrieval --> merge[Merge, deduplicate, keep source scores]
-    merge --> ranker[Ranker with availability/price features]
-    ranker --> policies[Policy re-ranker<br/>diversity, market restrictions]
-    policies --> organic[Organic results]
-    ads[Ad server] --> auction[Sponsored auction]
-    auction --> blend[Blended page with labels]
-    organic --> blend
-    blend --> exposure[Exposure log]
-    blend --> client[Client]
-
-    catalog[Catalog change stream] --> index[Online index and availability store]
-    index --> eligibility
-    index --> retrieval
-    index --> ranker
-```
+![4. Architecture](images/08_solved_classical_ml_cases_diagram_4_4-architecture.svg)
 
 Sponsored items are clearly labeled and bid through a separate auction; organic relevance does not depend on bid. Query understanding handles typos, intent, and entity extraction before retrieval.
 
@@ -280,25 +205,7 @@ For each feed/search surface, select and rank ads alongside organic content. Adv
 
 ### 3. Architecture
 
-```mermaid
-flowchart TB
-    request[Ad request with context and slot] --> targeting[Targeting and eligibility]
-    targeting --> candidates[Candidate ads from index]
-    candidates --> scoring[CTR/CVR prediction]
-    scoring --> pacing[Budget pacing and delivery]
-    pacing --> auction[Second-price or hybrid auction]
-    auction --> reserve[Reserve/relevance floor]
-    reserve --> render[Ad rendering and labeling]
-    render --> exposure[Exposure log]
-    render --> billing[Impression/click accounting]
-
-    advertisers[Advertisers and campaigns] --> index[Ad index with budgets]
-    index --> targeting
-    events[Clicks, conversions] --> feedback[Feedback and attribution]
-    feedback --> scoring
-    feedback --> pacing
-    billing --> ledger[Immutable billing ledger]
-```
+![3. Architecture](images/08_solved_classical_ml_cases_diagram_5_3-architecture.svg)
 
 Keep the auction deterministic and auditable: the model predicts CTR/CVR, and a separate auction service applies bid, relevance floor, and pacing. Predicted probabilities feed expected-value bidding rather than raw scores.
 
@@ -335,17 +242,7 @@ Forecast per-item demand at the store/warehouse level for a planning horizon of 
 
 ### 3. Design
 
-```mermaid
-flowchart TB
-    sales[POS and inventory] --> lake[Warehouse]
-    lake --> features[Feature pipelines<br/>price, promo, calendar, weather]
-    features --> hierarchy[Hierarchical reconciliation]
-    hierarchy --> models[Forecast models per tier]
-    models --> intervals[Prediction intervals]
-    intervals --> decisions[Replenishment and staffing]
-    decisions --> outcomes[Outcomes and feedback]
-    outcomes --> lake
-```
+![3. Design](images/08_solved_classical_ml_cases_diagram_6_3-design.svg)
 
 Forecast by aggregation level (SKU × store), then reconcile so children sum to parents. Use a strong seasonal-naive baseline before any model; then a mix of time-series (SARIMA/ETS), regression with promo/price/calendar features, and ML (GBDT/quantile regression) depending on data volume. Quantile regression or conformal prediction yields intervals, not just point forecasts.
 

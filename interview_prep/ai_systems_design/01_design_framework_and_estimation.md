@@ -71,37 +71,7 @@ Prefill and autoregressive decode behave differently; benchmark the production l
 
 Functional requirements include modes, personalization, explanations/citations, feedback, administration, audit, and deletion. Non-functional requirements include percentile latency, availability, consistency, freshness, RPO/RTO, privacy, residence, explainability, and cost ceiling.
 
-```mermaid
-flowchart TB
-    subgraph offline[Offline data plane]
-        sources[Sources] --> raw[Immutable raw data]
-        raw --> snapshots[Validated snapshots]
-        snapshots --> labels[Labels and features]
-        labels --> training[Training and evaluation]
-        training --> artifacts[Artifact registry]
-    end
-
-    subgraph online[Online data plane]
-        client[Client] --> auth[Authentication and rate limits]
-        auth --> retrieval[Features or retrieval]
-        retrieval --> inference[Inference]
-        inference --> policy[Policy and post-processing]
-        policy --> response[Response]
-    end
-
-    subgraph control[Control plane]
-        config[Configurations and versions]
-        permissions[Permissions and policies]
-        experiments[Experiments and deployments]
-        switches[Kill switches]
-    end
-
-    artifacts -. deployed model .-> inference
-    config -. configures .-> online
-    permissions -. governs .-> online
-    experiments -. controls .-> online
-    switches -. protects .-> online
-```
+![4. Requirements and architecture planes](images/01_design_framework_and_estimation_diagram_1_4-requirements-and-architecture-planes.svg)
 
 Log exposure before outcome. Without model/version/items shown, later clicks or conversions cannot be attributed.
 

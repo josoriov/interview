@@ -36,14 +36,7 @@ A calibrated 0.8 score should be correct about 80% of the time in that band. Use
 
 ## Retrieval and ranking
 
-```mermaid
-flowchart LR
-    catalog[Millions of items] --> filters[Eligibility filters]
-    filters --> retrieval[Candidate retrieval<br/>hundreds or thousands]
-    retrieval --> ranker[Ranker<br/>tens of items]
-    ranker --> reranker[Re-ranking and policies]
-    reranker --> results[Top K results]
-```
+![Retrieval and ranking](images/02_ml_foundations_diagram_1_retrieval-and-ranking.svg)
 
 Candidate sources include popularity, co-visitation, collaborative filtering, two-tower embeddings, content, lexical search, and exploration. Merge, deduplicate, and retain source scores as ranking features.
 
